@@ -155,8 +155,6 @@ window.onload = () => {
     // Start game
 
     function Start() {
-        loadAudios()
-        backgroundAudio.play()
         gameSpeed = 3;
         gravity = 1;
         player = new Player()
@@ -200,13 +198,10 @@ window.onload = () => {
                 //Comprueba por arriba || comprueba por abajo || comprueba de frente
                 if ((seedYandH > player.y && seed.y < player.y) || (seed.y < playerYandH && seedYandH > playerYandH) ||
                 (player.y < seed.y && playerYandH > seedYandH)) {
-                    /* backgroundAudio.pause()
-                    crashAudio.play() */
                     gameOver = true;
                     gameStarted = false
                     buttonStartToReload()
                     backgroundAudio.pause()
-                    /* ctx.drawImage(img, 200, 35, 400, 400) */
                     gameOverImg()
                 } else {
                     score += 10
@@ -233,13 +228,11 @@ window.onload = () => {
     }
 
     // Audios
-    let backgroundAudio;
-    const loadAudios = () => {
-        backgroundAudio = new Audio('/Sounds/background-music.mp3')
-        backgroundAudio.loop = true
+    
+    let startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
+    let backgroundAudio = new Audio('/Sounds/background-music.mp3')
+    
 
-        startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
-    }
     // Game Over
 
     const gameOverImg = () => {
@@ -279,10 +272,11 @@ window.onload = () => {
         if (!gameStarted) {
             gameStarted = true
             Start()
-            loadAudios()
-           /*  document.getElementById("start-button").classList.add(`noHover`); */
+            startAudio.play()
+            setTimeout(()=>{
+            backgroundAudio.play()
+            }, 1005)
         }
-        /* gameStarted = false */
     };
     
     //Reload 
@@ -291,15 +285,14 @@ window.onload = () => {
         const reloadButton = document.getElementById('start-button')
         reloadButton.innerText = 'RELOAD'
         reloadButton.addEventListener('click', () => {
-        /* document.getElementById("start-button").classList.add(`noHover`); */
-        location.reload()
-    })
-}
+            location.reload()
+        })
+    }
     
     //Pause game button
-    let gamePaused = false
+  let mutedAudio =
     document.getElementById('pause-button').onclick = () => {
-        backgroundAudio.pause()
+        backgroundAudio.mute = true
 
     }
 
