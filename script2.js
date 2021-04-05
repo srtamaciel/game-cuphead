@@ -155,6 +155,8 @@ window.onload = () => {
     // Start game
 
     function Start() {
+        loadAudios()
+        backgroundAudio.play()
         gameSpeed = 3;
         gravity = 1;
         player = new Player()
@@ -203,11 +205,9 @@ window.onload = () => {
                     gameOver = true;
                     gameStarted = false
                     buttonStartToReload()
+                    backgroundAudio.pause()
                     /* ctx.drawImage(img, 200, 35, 400, 400) */
                     gameOverImg()
-                    
-                    
-                    
                 } else {
                     score += 10
                     
@@ -230,6 +230,15 @@ window.onload = () => {
     // Clear canvas
     const clearCanvas = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Audios
+    let backgroundAudio;
+    const loadAudios = () => {
+        backgroundAudio = new Audio('/Sounds/background-music.mp3')
+        backgroundAudio.loop = true
+
+        startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
     }
     // Game Over
 
@@ -270,7 +279,10 @@ window.onload = () => {
         if (!gameStarted) {
             gameStarted = true
             Start()
+            loadAudios()
+           /*  document.getElementById("start-button").classList.add(`noHover`); */
         }
+        /* gameStarted = false */
     };
     
     //Reload 
@@ -279,25 +291,15 @@ window.onload = () => {
         const reloadButton = document.getElementById('start-button')
         reloadButton.innerText = 'RELOAD'
         reloadButton.addEventListener('click', () => {
-            if (gameStarted) {
-                gameStarted = false
-                Update()
-            }
-        })
-    }
+        /* document.getElementById("start-button").classList.add(`noHover`); */
+        location.reload()
+    })
+}
     
     //Pause game button
     let gamePaused = false
     document.getElementById('pause-button').onclick = () => {
-        if (!gamePaused) {
-            gamePaused = true;
-        } else if (gamePaused) {
-            if (!gameStarted) {
-                gameStarted = true
-                Start();
-            }
-            gamePaused = false;
-        }
+        backgroundAudio.pause()
 
     }
 

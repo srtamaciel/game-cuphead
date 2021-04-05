@@ -72,4 +72,7 @@ margin-left: 150px;
     margin-bottom: 50px;
     margin-left: 100px;
 }
+.noHover{
+    pointer-events: none;
+}
 
