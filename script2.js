@@ -72,7 +72,7 @@ class Player {
         this.grounded = false;
         this.jumpTimer = 0
     }
-    
+
     Animate() {
         // Jump
         if (keys['Space'] || keys['KeyW']) {
@@ -82,32 +82,32 @@ class Player {
         }
         if (keys['ArrowLeft']) {
             this.x -= 5;
-            
+
             ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h)
-            
+
         }
         if (keys['ArrowRight']) {
             this.x += 5;
         }
-        
+
         this.y += this.dy;
-        
+
         // Gravity
-        if (this.y + this.h < canvas.height-90) {
+        if (this.y + this.h < canvas.height - 90) {
             this.dy += gravity;
             this.grounded = false;
-            
+
         } else {
             this.dy = 0;
             this.grounded = true;
             this.y = canvas.height - this.h - 90;
         }
-        
+
         this.Draw();
     }
-    
+
     Jump() {
-        
+
         if (this.grounded && this.jumpTimer == 0) {
             this.jumpTimer = 1;
             this.dy = -this.jumpForce;
@@ -116,7 +116,7 @@ class Player {
             this.dy = -this.jumpForce - (this.jumpTimer / 50);
         }
     }
-    
+
     Draw() {
         ctx.beginPath();
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
@@ -126,22 +126,22 @@ class Player {
 
 // Enemy
 class Seeds {
-    constructor(){
+    constructor() {
         this.width = 40
         this.height = 30
         this.x = 500
-        this.y =Math.floor(Math.random() * ((400 - this.width) - 65)) + 65
+        this.y = Math.floor(Math.random() * ((400 - this.width) - 65)) + 65
         this.damage = 25
         this.img = new Image()
         this.img.src = '/Images/Acorn_01.png'
     }
-    
-    draw(){
+
+    draw() {
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
     }
-    
-    moveSelf(){
-        this.x -= 5 
+
+    moveSelf() {
+        this.x -= 5
     }
 }
 // Start game
@@ -158,12 +158,12 @@ let counterSeeds = 0
 let arrayOfSeeds = []
 const createSeeds = () => {
     counterSeeds++
-    if(counterSeeds === 45)  {
+    if (counterSeeds === 45) {
         const seed = new Seeds()
         arrayOfSeeds.push(seed)
         counterSeeds = 0
     }
-    
+
 }
 
 const drawSeeds = () => {
@@ -183,19 +183,19 @@ const renderGameOverText = () => {
     ctx.fillText(`GAME OVER`, ctx.canvas.width / 2, ctx.canvas.height / 2)
 }
 const renderScore = () => {
-    ctx.fillText(`Score: ${score}`, 70, 40)
+    ctx.fillText(`Score: ${score}`, 150, 50)
 }
 const checkCollision = () => {
     arrayOfSeeds.forEach((seed) => {
-        if (seed.y + seed.height === player.y) {
-            if (seed.y <= player.y && player.y <= (seed.y + seed.width) || 
-            seed.y <= (player.y + player.w) && (player.x + player.w) <= (seed.x + seed.width)) {
+        if (seed.x + seed.height === player.x) {
+            if (seed.y <= player.y && player.y <= (seed.y + seed.width) ||
+                seed.y <= (player.y + player.w) && (player.x + player.w) <= (seed.x + seed.width)) {
                 /* backgroundAudio.pause()
                 crashAudio.play() */
                 gameOver = true;
+                console.log(gameOver)
                 /* renderGameOverText() */
             } else {
-                /* console.log(score) */
                 score += 10
                 console.log(score)
             }
@@ -231,12 +231,32 @@ function Update() {
     gameSpeed += 0.003;
     requestAnimationFrame(Update);
 }
-/* Start() */
+// Start game button
 let gameStarted = false
 document.getElementById('start-button').onclick = () => {
-    if(!gameStarted) {
+    if (!gameStarted) {
         gameStarted = true
         Start()
     }
-}; 
+};
+//Pause game button
+let gamePaused = false
+
+
+document.getElementById('pause-button').onclick = () =>{
+    if (!gamePaused) {
+      gamePaused = true;
+    } else if (gamePaused) {
+        if(!gameStarted){
+        gameStarted = true
+        Start();
+    }
+      gamePaused = false;
+    }
+    
+}
+
+
+
+
 
