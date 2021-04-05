@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+window.onload = () => {
 
 // Variable
 let gameOver = false;
@@ -39,6 +40,7 @@ let flowerY = 60
 const drawSprite = (img, sX, sY, sW, sH, dX, dY, dW, dH) => {
     ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
 }
+
 //Animation flower
 let counter = 0
 const animate = () => {
@@ -82,8 +84,7 @@ class Player {
         }
         if (keys['ArrowLeft']) {
             this.x -= 5;
-
-            ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h)
+        this.drawLeft()
 
         }
         if (keys['ArrowRight']) {
@@ -122,6 +123,13 @@ class Player {
         ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
         ctx.closePath();
     }
+
+    drawLeft() {
+        ctx.beginPath();
+        ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h);
+        ctx.closePath();
+    }
+
 }
 
 // Enemy
@@ -177,27 +185,40 @@ const moveSeeds = () => {
         seed.moveSelf()
     })
 }
-//Colision
-const renderGameOverText = () => {
 
-    ctx.fillText(`GAME OVER`, ctx.canvas.width / 2, ctx.canvas.height / 2)
-}
+
+// Game Over
+
+
+    
+    let img = new Image()
+    img.src = '/Images/game-over.png' 
+       
+     /* ctx.fillText(`GAME OVER`, ctx.canvas.width / 2, ctx.canvas.height / 2)  */
+
+
 const renderScore = () => {
     ctx.fillText(`Score: ${score}`, 150, 50)
 }
+//Colision
+
 const checkCollision = () => {
     arrayOfSeeds.forEach((seed) => {
-        if (seed.x + seed.height === player.x) {
-            if (seed.y <= player.y && player.y <= (seed.y + seed.width) ||
-                seed.y <= (player.y + player.w) && (player.x + player.w) <= (seed.x + seed.width)) {
+        if (seed.x === player.x) {
+            let seedYandH = seed.y + seed.height
+            let playerYandH = player.y + player.h
+            //Comprueba por arriba || comprueba por abajo || comprueba de frente
+            if ((seedYandH > player.y && seed.y < player.y )|| (seed.y < playerYandH && seedYandH > playerYandH) || 
+            (player.y < seed.y && playerYandH > seedYandH)) { 
                 /* backgroundAudio.pause()
                 crashAudio.play() */
                 gameOver = true;
-                console.log(gameOver)
-                /* renderGameOverText() */
+                ctx.drawImage(img, 200 , 35, 400, 400)
+                
+                
             } else {
                 score += 10
-                console.log(score)
+               
             }
         }
     })
@@ -219,6 +240,7 @@ const clearCanvas = () => {
 
 //Loop
 function Update() {
+    if(!gameOver){
     clearCanvas()
     player.Animate()
     animate()
@@ -229,7 +251,8 @@ function Update() {
     checkCollision()
     renderScore()
     gameSpeed += 0.003;
-    requestAnimationFrame(Update);
+    requestAnimationFrame(Update)
+}
 }
 // Start game button
 let gameStarted = false
@@ -256,7 +279,7 @@ document.getElementById('pause-button').onclick = () =>{
     
 }
 
-
+}
 
 
 
