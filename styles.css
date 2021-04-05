@@ -2,7 +2,7 @@ body {
 
     padding: 0px;
     margin: 0px;
-    background-image: url('/Images/background.jpg');
+    background-image: url('./Images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -26,7 +26,7 @@ canvas {
 #canvas {
 
     border: solid 2px white;
-    background-image: url('/Images/background.jpg');
+    background-image: url('./Images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50px;
