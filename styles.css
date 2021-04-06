@@ -65,7 +65,7 @@ flex-direction: column;
 align-items: flex-start;
 justify-content: center;
 /* justify-content: space-evenly ; */
-margin-left: 250px;
+margin-left: 150px;
 align-items: center;
 
 }
@@ -100,3 +100,41 @@ justify-content:flex-end;
 .btn-primary{
     font-family: "AlegreyaSansSC-Medium";
 }
+
+.modal-body {
+    font-family: "AlegreyaSansSC-Medium";
+    color: black;
+}
+
+.clover {
+    width: 40px;
+}
+.acorn {
+    width: 40px;
+}
+
+.modal-title{
+    color: black;
+    text-align: center;
+}
+
+.btn-secondary{
+    font-family: "AlegreyaSansSC-Medium";
+    margin: 0;
+    padding: 10px;
+  
+}
+
+.modal-cuphead {
+    width: 450px;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: center
+}
+
+.modal-body{
+    text-align: center;
+}
+
