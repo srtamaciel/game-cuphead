@@ -8,7 +8,7 @@ body {
     height: 100vh;
     width: 100vw;
     color: white;
-    font-family:"AlegreyaSansSC-Black"
+    font-family: "AlegreyaSansSC-Black";
 
 }
 
@@ -59,32 +59,44 @@ canvas {
 }
 
 .buttons {
-font-family: "AlegreyaSansSC-Black" ;
+font-weight: lighter;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
 justify-content: center;
 /* justify-content: space-evenly ; */
-margin-left: 150px;
-align-content: center;
+margin-left: 250px;
+align-items: center;
 
 }
 
 .btn {
     padding: 30px;
-    margin-bottom: 50px;
+    margin-bottom:20px;
     margin-left: 100px;
 }
 footer {
+    
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    padding: 40px;
-    text-align: center;
     /* background-color: aliceblue; */
     color:white;
-    margin-top: 100px;
     font-size: 1.5rem;
 }
 
+.controllers {
+display:flex;
+flex-direction: row;
+justify-content:flex-end;
 
+}
+
+#game-board {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.btn-primary{
+    font-family: "AlegreyaSansSC-Medium";
+}

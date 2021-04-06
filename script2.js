@@ -78,8 +78,8 @@ window.onload = () => {
 
         animate() {
             // Jump
-            
-            
+
+
             if (keys['ArrowUp']) {
                 this.jump()
 
@@ -89,8 +89,8 @@ window.onload = () => {
             if (keys['ArrowLeft']) {
                 this.x -= 5;
                 this.direction = 'left'
-               
-                
+
+
             }
             if (keys['ArrowRight']) {
                 this.x += 5;
@@ -110,8 +110,8 @@ window.onload = () => {
                 this.y = canvas.height - this.h - 90;
             }
 
-             this.drawSelf()
- 
+            this.drawSelf()
+
         }
 
         jump() {
@@ -127,15 +127,15 @@ window.onload = () => {
 
         drawRight() {
             ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-        } 
-        
+        }
+
         drawLeft() {
             ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h);
-        } 
+        }
         drawSelf() {
-            if(this.direction === 'left'){
+            if (this.direction === 'left') {
                 this.drawLeft()
-            }else if(this.direction === 'right'){
+            } else if (this.direction === 'right') {
                 this.drawRight()
             }
         }
@@ -175,7 +175,7 @@ window.onload = () => {
     let arrayOfSeeds = []
     const createSeeds = () => {
         counterSeeds++
-        if (counterSeeds === 40) {
+        if (counterSeeds === 35) {
             const seed = new Seeds()
             arrayOfSeeds.push(seed)
             counterSeeds = 0
@@ -220,6 +220,17 @@ window.onload = () => {
             }
         })
     }
+// Check for win
+
+    const checkForWin = () => {
+        if (score === 100) {
+            gameOver = true
+            winnerImg()
+            backgroundAudio.pause()
+            winnerAudio.play()
+            buttonStartToReload()
+        }
+    }
 
     //Check borders
 
@@ -242,6 +253,7 @@ window.onload = () => {
     let startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
     let backgroundAudio = new Audio('/Sounds/background-music.mp3')
     let gameOverAudio = new Audio('/Sounds/game-over.mp3')
+    let winnerAudio = new Audio ('/Sounds/winner.mp3')
 
     // Game Over
 
@@ -251,6 +263,14 @@ window.onload = () => {
 
         looser.onload = () => {
             ctx.drawImage(looser, 0, 0, canvas.width, canvas.height)
+        }
+    }
+    // Winner
+    const winnerImg = () => {
+        let winner = new Image()
+        winner.src = './Images/winner-01.jpg'
+        winner.onload = () => {
+            ctx.drawImage(winner, 0, 0, canvas.width, canvas.height)
         }
     }
     //Render score
@@ -270,6 +290,7 @@ window.onload = () => {
             moveSeeds()
             checkBorders()
             checkCollision()
+            checkForWin()
             renderScore()
             gameSpeed += 0.003;
             requestAnimationFrame(Update)
@@ -306,5 +327,5 @@ window.onload = () => {
     document.getElementById('pause-button').onclick = () => {
         backgroundAudio.pause()
     }
-    
+
 }
