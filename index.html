@@ -13,53 +13,70 @@
 </head>
 
 <body>
+    <div class="contenedor">
+        <div class="encabezado">
+            <header class="title">
+                <img class="head-img" src="./Images/head.png" alt="cuphead head">
+                <img class="title-logo" src="./Images/logo-2.png" alt="title">
+                <img class="head-flower" src="./Images/head-flower.png" alt="head flower">
+            </header>
+        </div>
 
-    <header class="title">
-        <img class="head-img" src="./Images/head.png" alt="cuphead head">
-        <img class="title-logo" src="./Images/logo-2.png" alt="title">
-        <img class="head-flower" src="./Images/head-flower.png" alt="head flower">
-    </header>
+        <div class="canvas-board">
 
-    <div id="game-board">
-        <canvas id="canvas" width="800" height="450"></canvas>
-        <div class="buttons">
-            <button id="start-button" type="button" class="btn btn-light">START GAME</button>
-            <button id="pause-button" type="button" class="btn btn-light">SOUND OFF</button>
-            <!-- <button id="pause-button" type="button" class="btn btn-light">MUTE</button> -->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                INSTRUCTIONS
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                           <p> <b>Hi there!</p>
-                            <p> Do you ever tried to play the original Cuphead videogame?<br>
-                            Difficult uh?</p>
-                            <p>So this is your time! In this mini game try to get 400 of score against Cagney carnation in the Floral Fury level to win!</p>
-                            <p><img class="acorn" src="/Images/Acorn_01.png" alt="acorn-img"> Be careful with the acorns! <img class="acorn" src="/Images/Acorn_01.png" alt="acorn-img"></p>
-                            To avoid them ← use arrow left, arrow right → and arrow up ↑ to jump.</p>
-                            <img class="clover" src="./Images/clover.png" alt="clover-img"> GOOD LUCK!! <img  class="clover"src="./Images/clover.png" alt="clover-img"></p>
-                        </div>
-                        <div class="modal-footer">
-                            <img class="modal-cuphead" src="/Images/cuphead srpite-01.png" alt="cuphead-modal-img">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="buttons">
+                <button id="start-button" type="button" class="btn btn-light">START GAME</button>
+                <button id="pause-button" type="button" class="btn btn-light">SOUND OFF</button>
+                <!-- <button id="pause-button" type="button" class="btn btn-light">MUTE</button> -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">INSTRUCTIONS</button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Hi there!</p>
+                                <p> Do you ever tried to play the original Cuphead videogame?<br>
+                                    Difficult uh?</p>
+                                <p>So this is your time! In this mini game try to get 400 of score against Cagney
+                                    carnation
+                                    in the Floral Fury level to win!</p>
+                                <p><img class="acorn" src="/Images/Acorn_01.png" alt="acorn-img"> Be careful with
+                                    the
+                                    acorns! <img class="acorn" src="/Images/Acorn_01.png" alt="acorn-img"></p>
+                                To avoid them ← use arrow left, arrow right → and arrow up ↑ to jump.</p>
+                                <img class="clover" src="./Images/clover.png" alt="clover-img"> GOOD LUCK!! <img
+                                    class="clover" src="./Images/clover.png" alt="clover-img"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <img class="modal-cuphead" src="/Images/cuphead srpite-01.png" alt="cuphead-modal-img">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="canvas">
+                    <canvas id="canvas" width="800" height="450"></canvas>
+                </div>
+            </div>
+            <div>
+                
+                    <img src="./Images/arrows-white-01.png" alt="controllers-img">
+               
+            </div>
         </div>
-        <div class="controllers">
-            <img src="/Images/arrows-white-01.png" alt="controllers-img">
-        </div>
+        <footer>
+            <div class="name">by Raquel Rodríguez ©2021</div>
+        </footer>
     </div>
 
     <script src="/script2.js"></script>
@@ -69,11 +86,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
         integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
     </script>
-
-    <footer>
-        <p>by Raquel Rodríguez ©2021</p>
-    </footer>
-
 </body>
 
 </html>
