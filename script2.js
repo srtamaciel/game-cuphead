@@ -24,7 +24,7 @@ window.onload = () => {
 
 
 
-    //Flower animation
+    //Flower sprite
 
     const images = {}
     images.flower = new Image()
@@ -41,7 +41,7 @@ window.onload = () => {
         ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH)
     }
 
-    //Animation flower
+    //Animation sprite
     let counter = 0
     const animate = () => {
         drawSprite(images.flower, (flowerWidth * flowerFrameX), (flowerHeigth * flowerFrameY), flowerWidth, flowerHeigth, flowerX, flowerY, 250, 350)
@@ -77,7 +77,7 @@ window.onload = () => {
 
         Animate() {
             // Jump
-            if (keys['Space'] || keys['KeyW']) {
+            if (keys['ArrowUp'] || keys['KeyW']) {
                 this.Jump();
             } else {
                 this.jumpTimer = 0;
@@ -203,6 +203,7 @@ window.onload = () => {
                     buttonStartToReload()
                     backgroundAudio.pause()
                     gameOverImg()
+                    gameOverAudio.play()
                 } else {
                     score += 10
                     
@@ -231,17 +232,17 @@ window.onload = () => {
     
     let startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
     let backgroundAudio = new Audio('/Sounds/background-music.mp3')
-    
+    let gameOverAudio = new Audio('/Sounds/game-over.mp3')
 
     // Game Over
 
     const gameOverImg = () => {
         let looser = new Image()
-        looser.src = './Images/game-over.png'
-        let looserX = canvas.width  / 2 -230
-        let looserY = canvas.height / 2 -190
+        looser.src = './Images/Game-over-new-img.png'
+        /* let looserX = canvas.width  / 2 -150
+        let looserY = canvas.height / 2 -150 */
         looser.onload = () => {
-            ctx.drawImage(looser, looserX, looserY, 400, 400)
+            ctx.drawImage(looser, 0, 0, canvas.width, canvas.height)
         }
     }
     //Render score
@@ -286,14 +287,15 @@ window.onload = () => {
         reloadButton.innerText = 'RELOAD'
         reloadButton.addEventListener('click', () => {
             location.reload()
+            startAudio.pause()
+
+
         })
     }
     
     //Pause game button
-  let mutedAudio =
+
     document.getElementById('pause-button').onclick = () => {
-        backgroundAudio.mute = true
-
+        backgroundAudio.pause()
     }
-
 }

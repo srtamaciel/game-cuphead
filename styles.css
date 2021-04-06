@@ -8,6 +8,7 @@ body {
     height: 100vh;
     width: 100vw;
     color: white;
+    font-family:"AlegreyaSansSC-Black"
 
 }
 
@@ -25,7 +26,7 @@ canvas {
 
 #canvas {
 
-    border: solid 2px white;
+    border: solid 5px white;
     background-image: url('Images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -43,7 +44,7 @@ canvas {
 }
 
 .head-img {
-    margin-left: 40px;
+    margin-left: 100px;
     width: 250px;
     margin-bottom: 140px
 }
@@ -53,7 +54,7 @@ canvas {
 }
 
 .head-flower {
-    margin-right: 90px;
+    margin-right: 150px;
     width: 210px;
 }
 
@@ -62,8 +63,10 @@ font-family: "AlegreyaSansSC-Black" ;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
+justify-content: center;
 justify-content: space-evenly ;
 margin-left: 150px;
+align-content: center;
 
 }
 
@@ -72,7 +75,14 @@ margin-left: 150px;
     margin-bottom: 50px;
     margin-left: 100px;
 }
-.noHover{
-    pointer-events: none;
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 40px;
+    text-align: center;
+    /* background-color: aliceblue; */
+    color:white
 }
+
 
