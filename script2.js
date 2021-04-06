@@ -73,42 +73,45 @@ window.onload = () => {
             this.originalHeight = 260;
             this.grounded = false;
             this.jumpTimer = 0
+            this.direction = 'right'
         }
 
         animate() {
             // Jump
-            this.draw()
+            
             
             if (keys['ArrowUp']) {
                 this.jump()
+
             } else {
                 this.jumpTimer = 0;
             }
             if (keys['ArrowLeft']) {
                 this.x -= 5;
-                this.drawLeft()
+                this.direction = 'left'
+               
                 
             }
             if (keys['ArrowRight']) {
                 this.x += 5;
-
+                this.direction = 'right'
             }
-            
+
             this.y += this.dy;
-            
+
             // Gravity
             if (this.y + this.h < canvas.height - 90) {
                 this.dy += gravity;
                 this.grounded = false;
-                
+
             } else {
                 this.dy = 0;
                 this.grounded = true;
                 this.y = canvas.height - this.h - 90;
             }
-            
-            /* this.Draw() */
-            
+
+             this.drawSelf()
+ 
         }
 
         jump() {
@@ -122,16 +125,19 @@ window.onload = () => {
             }
         }
 
-        draw() {
-            ctx.beginPath();
+        drawRight() {
             ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-            ctx.closePath();
-        }
-
+        } 
+        
         drawLeft() {
-            ctx.beginPath();
             ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h);
-            ctx.closePath();
+        } 
+        drawSelf() {
+            if(this.direction === 'left'){
+                this.drawLeft()
+            }else if(this.direction === 'right'){
+                this.drawRight()
+            }
         }
 
     }
@@ -190,9 +196,9 @@ window.onload = () => {
     }
 
 
-    
+
     //Colision
-    
+
     const checkCollision = () => {
         arrayOfSeeds.forEach((seed) => {
             if (seed.x === player.x) {
@@ -200,7 +206,7 @@ window.onload = () => {
                 let playerYandH = player.y + player.h
                 //Comprueba por arriba || comprueba por abajo || comprueba de frente
                 if ((seedYandH > player.y && seed.y < player.y) || (seed.y < playerYandH && seedYandH > playerYandH) ||
-                (player.y < seed.y && playerYandH > seedYandH)) {
+                    (player.y < seed.y && playerYandH > seedYandH)) {
                     gameOver = true;
                     gameStarted = false
                     buttonStartToReload()
@@ -209,14 +215,14 @@ window.onload = () => {
                     gameOverAudio.play()
                 } else {
                     score += 10
-                    
+
                 }
             }
         })
     }
-    
+
     //Check borders
-    
+
     const checkBorders = () => {
         if (player.x > 740) {
             player.x = 740
@@ -225,14 +231,14 @@ window.onload = () => {
             player.x = 40
         }
     }
-    
+
     // Clear canvas
     const clearCanvas = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
     // Audios
-    
+
     let startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
     let backgroundAudio = new Audio('/Sounds/background-music.mp3')
     let gameOverAudio = new Audio('/Sounds/game-over.mp3')
@@ -252,7 +258,7 @@ window.onload = () => {
     const renderScore = () => {
         ctx.fillText(`Score: ${score}`, 150, 50)
     }
-    
+
     //Loop
     function Update() {
         if (!gameOver) {
@@ -276,14 +282,14 @@ window.onload = () => {
             gameStarted = true
             start()
             startAudio.play()
-            setTimeout(()=>{
-            backgroundAudio.play()
+            setTimeout(() => {
+                backgroundAudio.play()
             }, 1005)
         }
     };
-    
+
     //Reload 
-    
+
     const buttonStartToReload = () => {
         const reloadButton = document.getElementById('start-button')
         reloadButton.innerText = 'RELOAD'
@@ -294,10 +300,11 @@ window.onload = () => {
 
         })
     }
-    
+
     //Pause game button
 
     document.getElementById('pause-button').onclick = () => {
         backgroundAudio.pause()
     }
+    
 }
