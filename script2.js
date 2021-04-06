@@ -43,7 +43,7 @@ window.onload = () => {
 
     //Animation sprite
     let counter = 0
-    const animate = () => {
+    const animateSprite = () => {
         drawSprite(images.flower, (flowerWidth * flowerFrameX), (flowerHeigth * flowerFrameY), flowerWidth, flowerHeigth, flowerX, flowerY, 250, 350)
         if (flowerFrameX < 20) {
             counter++
@@ -75,39 +75,43 @@ window.onload = () => {
             this.jumpTimer = 0
         }
 
-        Animate() {
+        animate() {
             // Jump
-            if (keys['ArrowUp'] || keys['KeyW']) {
-                this.Jump();
+            this.draw()
+            
+            if (keys['ArrowUp']) {
+                this.jump()
             } else {
                 this.jumpTimer = 0;
             }
             if (keys['ArrowLeft']) {
                 this.x -= 5;
                 this.drawLeft()
-
+                
             }
             if (keys['ArrowRight']) {
                 this.x += 5;
+
             }
-
+            
             this.y += this.dy;
-
+            
             // Gravity
             if (this.y + this.h < canvas.height - 90) {
                 this.dy += gravity;
                 this.grounded = false;
-
+                
             } else {
                 this.dy = 0;
                 this.grounded = true;
                 this.y = canvas.height - this.h - 90;
             }
-
-            this.Draw();
+            
+            /* this.Draw() */
+            
         }
 
-        Jump() {
+        jump() {
 
             if (this.grounded && this.jumpTimer == 0) {
                 this.jumpTimer = 1;
@@ -118,7 +122,7 @@ window.onload = () => {
             }
         }
 
-        Draw() {
+        draw() {
             ctx.beginPath();
             ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
             ctx.closePath();
@@ -138,8 +142,7 @@ window.onload = () => {
             this.width = 40
             this.height = 30
             this.x = 500
-            this.y = Math.floor(Math.random() * ((400 - this.width) - 65)) + 65
-            this.damage = 25
+            this.y = Math.floor(Math.random() * ((390 - this.width) - 60)) + 60
             this.img = new Image()
             this.img.src = '/Images/Acorn_01.png'
         }
@@ -154,7 +157,7 @@ window.onload = () => {
     }
     // Start game
 
-    function Start() {
+    const start = () => {
         gameSpeed = 3;
         gravity = 1;
         player = new Player()
@@ -166,7 +169,7 @@ window.onload = () => {
     let arrayOfSeeds = []
     const createSeeds = () => {
         counterSeeds++
-        if (counterSeeds === 45) {
+        if (counterSeeds === 40) {
             const seed = new Seeds()
             arrayOfSeeds.push(seed)
             counterSeeds = 0
@@ -239,8 +242,7 @@ window.onload = () => {
     const gameOverImg = () => {
         let looser = new Image()
         looser.src = './Images/Game-over-new-img.png'
-        /* let looserX = canvas.width  / 2 -150
-        let looserY = canvas.height / 2 -150 */
+
         looser.onload = () => {
             ctx.drawImage(looser, 0, 0, canvas.width, canvas.height)
         }
@@ -255,8 +257,8 @@ window.onload = () => {
     function Update() {
         if (!gameOver) {
             clearCanvas()
-            player.Animate()
-            animate()
+            player.animate()
+            animateSprite()
             createSeeds()
             drawSeeds()
             moveSeeds()
@@ -272,7 +274,7 @@ window.onload = () => {
     document.getElementById('start-button').onclick = () => {
         if (!gameStarted) {
             gameStarted = true
-            Start()
+            start()
             startAudio.play()
             setTimeout(()=>{
             backgroundAudio.play()
