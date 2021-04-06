@@ -223,7 +223,7 @@ window.onload = () => {
 // Check for win
 
     const checkForWin = () => {
-        if (score === 100) {
+        if (score === 400) {
             gameOver = true
             winnerImg()
             backgroundAudio.pause()

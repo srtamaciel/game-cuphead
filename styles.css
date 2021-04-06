@@ -9,13 +9,12 @@ body {
     width: 100vw;
     color: white;
     font-family: "AlegreyaSansSC-Black";
-
 }
 
- .canvas {
+.canvas {
     padding: 0;
     max-width: 70%;
-} 
+}
 
 #canvas {
 
@@ -33,18 +32,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 50px;
 
 }
 
 .head-img {
     margin-left: 100px;
     width: 250px;
-    margin-bottom: 140px
+
 }
 
-.title-logo {
-    margin-bottom: 200px;
-}
 
 .head-flower {
     margin-right: 150px;
@@ -52,31 +49,32 @@ body {
 }
 
 .buttons {
-font-weight: lighter;
-display: flex;
-flex-direction: column;
-justify-content: center;
-/* justify-content: space-evenly ; */
-/* margin-left: 150px; */
-align-items: center;
-max-width: 15%;
-margin-right: 40px;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* justify-content: space-evenly ; */
+    /* margin-left: 150px; */
+    align-items: center;
+    max-width: 15%;
+    margin-right: 40px;
 
 }
 
 .btn {
     padding: 30px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     /* margin-left: 100px; */
 }
+
 footer {
     text-align: center;
-    color:white;
+    color: white;
     font-size: 1.5rem;
 }
 
 .controllers {
-max-width: 15%;
+    max-width: 15%;
 
 }
 
@@ -88,12 +86,7 @@ max-width: 15%;
     margin-left: 50px;
 }
 
-.canvas-board  img {
-    margin-left: 30px;
-}
-
-
-.btn-primary{
+.btn-primary {
     font-family: "AlegreyaSansSC-Medium";
 }
 
@@ -101,20 +94,23 @@ max-width: 15%;
     font-family: "AlegreyaSansSC-Medium";
     color: black;
 }
-
+.modal-title{
+    margin-left: 180px;
+}
 .clover {
     width: 40px;
 }
+
 .acorn {
     width: 40px;
 }
 
-.modal-title{
+.modal-title {
     color: black;
     text-align: center;
 }
 
-.btn-secondary{
+.btn-secondary {
     font-family: "AlegreyaSansSC-Medium";
     margin: 0;
     padding: 10px;
@@ -124,23 +120,23 @@ max-width: 15%;
     width: 450px;
 }
 
-.modal-footer{
+.modal-footer {
     display: flex;
     justify-content: center
 }
 
-.modal-body{
+.modal-body {
     text-align: center;
 }
 
-.contenedor{
+.contenedor {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.encabezado{
+.encabezado {
     display: flex;
     justify-content: space-between;
     align-items: center;
