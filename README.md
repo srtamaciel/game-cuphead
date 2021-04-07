@@ -6,13 +6,21 @@ This is the first project at *ironhack* web development **bootcamp**, build a fu
 
 Do you ever tried to play the original Cuphead videogame? Difficult uh? 💢
 
-So this is your time! 🥳  In this mini game try to get 400 of score against Cagney carnation in the Floral Fury level to win!🌼 
-Be careful with the acorns! 
-It's easy! 🍀 
-Click start to play the game, use arrow left ← to go backwards, arrow right → to go forwards and the spacebar to jump. You can put the sound on and off as you please 🔇
+So this is your time! 🥳  
+
+In this mini game try to get 400 of score against Cagney carnation in the Floral Fury level to win!🌼
+
+❗️Be careful with the acorns!❗️
+
+🍀 It's easy!🍀 
+
+
+Click start to play the game, use arrow left ← to go backwards, arrow right → to go forwards and the spacebar to jump.
+
+You can put the sound on and off as you please 🔇
 
 ## Link 🔗
-[Game URL](https://cuphead-game.netlify.app/)
+👉 [Game URL](https://cuphead-game.netlify.app/)
 
 ![screenshot](https://i.ibb.co/GkmBMsS/Captura-de-pantalla-2021-04-07-a-las-12-29-23.png)
 
@@ -29,6 +37,6 @@ Click start to play the game, use arrow left ← to go backwards, arrow right �
 
 👩🏻‍💻 [Raquel Rodriguez](https://github.com/srtamaciel) 
 
---
+---
 
-Programmed with 💪🏻 by [🙋🏻‍♀️](https://github.com/srtamaciel)  *Ironhacker*  ✨ Enjoy it! ✨
+Programmed with 💪 by [🙋🏻‍♀️](https://github.com/srtamaciel)  *Ironhacker*  ✨ Enjoy it! ✨
