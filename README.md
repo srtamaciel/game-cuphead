@@ -14,7 +14,7 @@ Click start to play the game, use arrow left ← to go backwards, arrow right �
 ## Link 🔗
 [Game URL](https://cuphead-game.netlify.app/)
 
-![screenshot](https://i.ibb.co/GkmBMsS/Captura-de-pantalla-2021-04-07-a-las-12-29-23.png
+![screenshot](https://i.ibb.co/GkmBMsS/Captura-de-pantalla-2021-04-07-a-las-12-29-23.png)
 
 
 ## Built with 🛠
