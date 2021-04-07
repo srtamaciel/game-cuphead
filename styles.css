@@ -35,7 +35,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
 

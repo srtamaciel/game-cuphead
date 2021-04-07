@@ -322,10 +322,19 @@ window.onload = () => {
         })
     }
 
-    //Pause game button
+    //Pause sound button
 
-    document.getElementById('pause-button').onclick = () => {
-        backgroundAudio.pause()
-    }
+    const soundButton = document.getElementById('pause-button')
+    
+    soundButton.addEventListener('click', ()=>{
+        soundButton.classList.toggle('muted')
+        if (soundButton.classList.contains('muted')){
+            backgroundAudio.muted = true
+        }else{
+            backgroundAudio.muted = false
+            soundButton.classList.toggle('playing')
 
+
+        }
+    })
 }
