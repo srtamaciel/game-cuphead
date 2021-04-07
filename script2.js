@@ -80,7 +80,7 @@ window.onload = () => {
             // Jump
 
 
-            if (keys['ArrowUp']) {
+            if (keys['Space']) {
                 this.jump()
 
             } else {
