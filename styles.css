@@ -152,8 +152,13 @@ footer {
 }
 
 .name {
+    color: black;
     margin-top: 20px;
     margin-right: 40px;
+    text-decoration: none;
+}
+.name:hover {
+    color: white;
 }
 
 #start-button{
