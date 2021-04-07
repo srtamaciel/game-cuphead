@@ -5,7 +5,8 @@ This is the first project at *ironhack* web development **bootcamp**, build a fu
 ## The game 🎮
 
 Do you ever tried to play the original Cuphead videogame? Difficult uh? 💢
-So this is your time! 🥳 In this mini game try to get 400 of score against Cagney carnation in the Floral Fury level to win!🌼 
+
+So this is your time! 🥳  In this mini game try to get 400 of score against Cagney carnation in the Floral Fury level to win!🌼 
 Be careful with the acorns! 
 It's easy! 🍀 
 Click start to play the game, use arrow left ← to go backwards, arrow right → to go forwards and the spacebar to jump. You can put the sound on and off as you please 🔇
@@ -13,10 +14,10 @@ Click start to play the game, use arrow left ← to go backwards, arrow right �
 ## Link 🔗
 [Game URL](https://cuphead-game.netlify.app/)
 
-![ScreenShot](https://ibb.co/6bQVtvC)
+![screenshot](https://i.ibb.co/GkmBMsS/Captura-de-pantalla-2021-04-07-a-las-12-29-23.png
 
 
-# Built with 🛠
+## Built with 🛠
 
 * [HTML](https://www.w3schools.com/html/html_intro.asp)
 * [CSS](https://www.w3schools.com/css/css_intro.asp)
@@ -24,9 +25,10 @@ Click start to play the game, use arrow left ← to go backwards, arrow right �
 * [Canvas](https://www.w3schools.com/graphics/canvas_intro.asp)
 * [Bootstrap](https://www.w3schools.com/bootstrap4/bootstrap_get_started.asp)
 
-# Author 🙋🏻‍♀️
+## Author 🙋🏻‍♀
 
 👩🏻‍💻 [Raquel Rodriguez](https://github.com/srtamaciel) 
+
 --
 
-Programmed with 💪🏻 by [🙋🏻‍♀️](https://github.com/srtamaciel) *Ironhacker* ✨ Enjoy it! ✨
+Programmed with 💪🏻 by [🙋🏻‍♀️](https://github.com/srtamaciel)  *Ironhacker*  ✨ Enjoy it! ✨
