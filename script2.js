@@ -1,8 +1,9 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+
 window.onload = () => {
 
-    // Variable
+    // Variables
     let gameOver = false;
     let score = 0
     let player;
@@ -14,6 +15,13 @@ window.onload = () => {
     ctx.textBaseline = 'middle'
     ctx.fillStyle = "white"
 
+    // Audios
+    let startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
+    let backgroundAudio = new Audio('/Sounds/background-music.mp3')
+    let gameOverAudio = new Audio('/Sounds/game-over.mp3')
+    let winnerAudio = new Audio('/Sounds/winner.mp3')
+
+
     // Event Listeners
     document.addEventListener('keydown', (evt) => {
         keys[evt.code] = true;
@@ -22,7 +30,27 @@ window.onload = () => {
         keys[evt.code] = false;
     });
 
+    
+    // Start game
+    const start = () => {
+        gameSpeed = 3;
+        gravity = 1;
+        player = new Player()
+        requestAnimationFrame(Update);
+    }
 
+    // Start game button
+    let gameStarted = false
+    document.getElementById('start-button').onclick = () => {
+        if (!gameStarted) {
+            gameStarted = true
+            start()
+            startAudio.play()
+            setTimeout(() => {
+                backgroundAudio.play()
+            }, 1005)
+        }
+    };
 
     //Flower sprite
 
@@ -77,9 +105,8 @@ window.onload = () => {
         }
 
         animate() {
+
             // Jump
-
-
             if (keys['Space']) {
                 this.jump()
 
@@ -89,14 +116,11 @@ window.onload = () => {
             if (keys['ArrowLeft']) {
                 this.x -= 5;
                 this.direction = 'left'
-
-
             }
             if (keys['ArrowRight']) {
                 this.x += 5;
                 this.direction = 'right'
             }
-
             this.y += this.dy;
 
             // Gravity
@@ -109,13 +133,10 @@ window.onload = () => {
                 this.grounded = true;
                 this.y = canvas.height - this.h - 90;
             }
-
             this.drawSelf()
-
         }
 
         jump() {
-
             if (this.grounded && this.jumpTimer == 0) {
                 this.jumpTimer = 1;
                 this.dy = -this.jumpForce;
@@ -132,6 +153,7 @@ window.onload = () => {
         drawLeft() {
             ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h);
         }
+        
         drawSelf() {
             if (this.direction === 'left') {
                 this.drawLeft()
@@ -142,7 +164,8 @@ window.onload = () => {
 
     }
 
-    // Enemy
+    // Obstacles
+
     class Seeds {
         constructor() {
             this.width = 40
@@ -160,14 +183,6 @@ window.onload = () => {
         moveSelf() {
             this.x -= 5
         }
-    }
-    // Start game
-
-    const start = () => {
-        gameSpeed = 3;
-        gravity = 1;
-        player = new Player()
-        requestAnimationFrame(Update);
     }
 
     // Seeds
@@ -220,8 +235,17 @@ window.onload = () => {
             }
         })
     }
-// Check for win
+    // Game Over
 
+    const gameOverImg = () => {
+        let looser = new Image()
+        looser.src = './Images/Game-over-new-img.png'
+
+        looser.onload = () => {
+            ctx.drawImage(looser, 0, 0, canvas.width, canvas.height)
+        }
+    }
+    // Check for win
     const checkForWin = () => {
         if (score === 400) {
             gameOver = true
@@ -232,8 +256,23 @@ window.onload = () => {
         }
     }
 
-    //Check borders
 
+    // Winner
+    const winnerImg = () => {
+        let winner = new Image()
+        winner.src = './Images/winner-01.jpg'
+        winner.onload = () => {
+            ctx.drawImage(winner, 0, 0, canvas.width, canvas.height)
+        }
+    }
+
+    //Render score
+    const renderScore = () => {
+        ctx.fillText(`Score: ${score}`, 150, 50)
+    }
+
+
+    //Check borders
     const checkBorders = () => {
         if (player.x > 740) {
             player.x = 740
@@ -248,36 +287,7 @@ window.onload = () => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Audios
 
-    let startAudio = new Audio('/Sounds/cuphead-narrator-now-go.mp3')
-    let backgroundAudio = new Audio('/Sounds/background-music.mp3')
-    let gameOverAudio = new Audio('/Sounds/game-over.mp3')
-    let winnerAudio = new Audio ('/Sounds/winner.mp3')
-
-    // Game Over
-
-    const gameOverImg = () => {
-        let looser = new Image()
-        looser.src = './Images/Game-over-new-img.png'
-
-        looser.onload = () => {
-            ctx.drawImage(looser, 0, 0, canvas.width, canvas.height)
-        }
-    }
-    // Winner
-    const winnerImg = () => {
-        let winner = new Image()
-        winner.src = './Images/winner-01.jpg'
-        winner.onload = () => {
-            ctx.drawImage(winner, 0, 0, canvas.width, canvas.height)
-        }
-    }
-    //Render score
-
-    const renderScore = () => {
-        ctx.fillText(`Score: ${score}`, 150, 50)
-    }
 
     //Loop
     function Update() {
@@ -296,18 +306,7 @@ window.onload = () => {
             requestAnimationFrame(Update)
         }
     }
-    // Start game button
-    let gameStarted = false
-    document.getElementById('start-button').onclick = () => {
-        if (!gameStarted) {
-            gameStarted = true
-            start()
-            startAudio.play()
-            setTimeout(() => {
-                backgroundAudio.play()
-            }, 1005)
-        }
-    };
+
 
     //Reload 
 
@@ -325,12 +324,11 @@ window.onload = () => {
     //Pause sound button
 
     const soundButton = document.getElementById('pause-button')
-    
-    soundButton.addEventListener('click', ()=>{
+    soundButton.addEventListener('click', () => {
         soundButton.classList.toggle('muted')
-        if (soundButton.classList.contains('muted')){
+        if (soundButton.classList.contains('muted')) {
             backgroundAudio.muted = true
-        }else{
+        } else {
             backgroundAudio.muted = false
             soundButton.classList.toggle('playing')
 

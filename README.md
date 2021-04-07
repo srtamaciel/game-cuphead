@@ -1,6 +1,6 @@
 # Cuphead | The minigame
 
-This is the first project at *ironhack* web development **bootcamp**, build a functional videogame that can be runned in a web browser and my first time as a full stack developer as well. Everything has been builted in seven days ⏳
+This is the first project at *ironhack* web development **bootcamp**, build a functional videogame that can be runned in a web browser and my first time as a full stack developer as well. Everything has been built in seven days ⏳
 
 ## The game 🎮
 
