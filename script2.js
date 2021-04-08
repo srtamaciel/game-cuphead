@@ -47,6 +47,7 @@ window.onload = () => {
             start()
             startAudio.play()
             setTimeout(() => {
+                backgroundAudio.volume = 0.4
                 backgroundAudio.play()
             }, 1005)
         }
