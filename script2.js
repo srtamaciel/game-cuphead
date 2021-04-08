@@ -1,16 +1,16 @@
-const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas')
+const ctx = canvas.getContext('2d')
 
 window.onload = () => {
 
     // Variables
-    let gameOver = false;
+    let gameOver = false
     let score = 0
     let player;
     let gravity;
     let gameSpeed;
-    let keys = {};
-    ctx.font = '30px AlegreyaSansSC-Black';
+    let keys = {}
+    ctx.font = '30px AlegreyaSansSC-Black'
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
     ctx.fillStyle = "white"
@@ -33,10 +33,10 @@ window.onload = () => {
     
     // Start game
     const start = () => {
-        gameSpeed = 3;
-        gravity = 1;
+        gameSpeed = 3
+        gravity = 1
         player = new Player()
-        requestAnimationFrame(Update);
+        requestAnimationFrame(Update)
     }
 
     // Start game button
@@ -88,18 +88,18 @@ window.onload = () => {
     // Player
     class Player {
         constructor() {
-            this.x = 30;
-            this.y = 0;
-            this.w = 60;
-            this.h = 80;
+            this.x = 30
+            this.y = 0
+            this.w = 60
+            this.h = 80
             this.img = new Image()
             this.img.src = '/Images/cuphead.png'
             this.imgL = new Image()
             this.imgL.src = '/Images/cuphead left.png'
-            this.dy = 0;
-            this.jumpForce = 15;
-            this.originalHeight = 260;
-            this.grounded = false;
+            this.dy = 0
+            this.jumpForce = 12
+            /* this.originalHeight = 260 */
+            this.grounded = false
             this.jumpTimer = 0
             this.direction = 'right'
         }
@@ -111,47 +111,47 @@ window.onload = () => {
                 this.jump()
 
             } else {
-                this.jumpTimer = 0;
+                this.jumpTimer = 0
             }
             if (keys['ArrowLeft']) {
-                this.x -= 5;
+                this.x -= 5
                 this.direction = 'left'
             }
             if (keys['ArrowRight']) {
-                this.x += 5;
+                this.x += 5
                 this.direction = 'right'
             }
-            this.y += this.dy;
+            this.y += this.dy
 
             // Gravity
             if (this.y + this.h < canvas.height - 90) {
-                this.dy += gravity;
-                this.grounded = false;
+                this.dy += gravity
+                this.grounded = false
 
             } else {
-                this.dy = 0;
-                this.grounded = true;
-                this.y = canvas.height - this.h - 90;
+                this.dy = 0
+                this.grounded = true
+                this.y = canvas.height - this.h - 90
             }
             this.drawSelf()
         }
 
         jump() {
             if (this.grounded && this.jumpTimer == 0) {
-                this.jumpTimer = 1;
-                this.dy = -this.jumpForce;
+                this.jumpTimer = 1
+                this.dy = -this.jumpForce
             } else if (this.jumpTimer > 0 && this.jumpTimer < 15) {
-                this.jumpTimer++;
-                this.dy = -this.jumpForce - (this.jumpTimer / 50);
+                this.jumpTimer++
+                this.dy = -this.jumpForce - (this.jumpTimer / 50)
             }
         }
 
         drawRight() {
-            ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
+            ctx.drawImage(this.img, this.x, this.y, this.w, this.h)
         }
 
         drawLeft() {
-            ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h);
+            ctx.drawImage(this.imgL, this.x, this.y, this.w, this.h)
         }
         
         drawSelf() {
