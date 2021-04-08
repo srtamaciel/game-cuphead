@@ -1,6 +1,8 @@
+
 html{
     overflow: hidden;
 }
+
 body {
 
     padding: 0px;
@@ -46,7 +48,6 @@ body {
 
 }
 
-
 .head-flower {
     margin-right: 150px;
     width: 210px;
@@ -57,8 +58,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* justify-content: space-evenly ; */
-    /* margin-left: 150px; */
     align-items: center;
     max-width: 15%;
     margin-right: 40px;
@@ -66,9 +65,7 @@ body {
 }
 
 .btn {
-    /* padding: 30px; */
     margin-bottom: 20px;
-    /* margin-left: 100px; */
 }
 
 footer {
@@ -91,15 +88,15 @@ footer {
 }
 
 .btn-primary {
-    /* font-family: "AlegreyaSansSC-Medium"; */
     background-color: #f8f9fa;
     border-color: #f8f9fa;
     color: black;
 }
 
 .modal-body {
-    font-family: "AlegreyaSansSC-Medium";
+    text-align: center;
     color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .modal-title{
     margin-left: 180px;
@@ -118,7 +115,6 @@ footer {
 }
 
 .btn-secondary {
-    font-family: "AlegreyaSansSC-Medium";
     margin: 0;
     padding-left: 30px;
     padding-right: 30px;
@@ -129,15 +125,14 @@ footer {
     width: 450px;
 }
 
+
 .modal-footer {
     display: flex;
     justify-content: center
 }
-
-.modal-body {
-    text-align: center;
+.controlles-img{
+    margin-left: 30px;
 }
-
 .contenedor {
     display: flex;
     flex-direction: column;
@@ -177,6 +172,7 @@ footer {
     background-color: #f27050ff;
     
     }
+
     .query-img {
     display: flex;
     flex-direction: column;

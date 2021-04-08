@@ -45,9 +45,10 @@ window.onload = () => {
         if (!gameStarted) {
             gameStarted = true
             start()
+            startAudio.volume = 0.5
             startAudio.play()
             setTimeout(() => {
-                backgroundAudio.volume = 0.4
+                backgroundAudio.volume = 0.3
                 backgroundAudio.play()
             }, 1005)
         }
@@ -99,7 +100,6 @@ window.onload = () => {
             this.imgL.src = '/Images/cuphead left.png'
             this.dy = 0
             this.jumpForce = 12
-            /* this.originalHeight = 260 */
             this.grounded = false
             this.jumpTimer = 0
             this.direction = 'right'
@@ -228,6 +228,7 @@ window.onload = () => {
                     buttonStartToReload()
                     backgroundAudio.pause()
                     gameOverImg()
+                    gameOverAudio.volume = 0.3
                     gameOverAudio.play()
                 } else {
                     score += 10
@@ -252,6 +253,7 @@ window.onload = () => {
             gameOver = true
             winnerImg()
             backgroundAudio.pause()
+            winnerAudio.volume = 0.3
             winnerAudio.play()
             buttonStartToReload()
         }
