@@ -4,7 +4,7 @@ This is the first project at *ironhack* web development **bootcamp**, build a fu
 
 ## The game 🎮
 
-Do you ever tried to play the original Cuphead videogame? Difficult uh? 💢
+Have you ever tried to play the original Cuphead videogame? Difficult uh? 💢
 
 So this is your time! 🥳  
 
