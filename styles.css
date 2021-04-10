@@ -7,6 +7,7 @@ html{
     font-family:"TitleFont";
     src: url("./Fonts/AlegreyaSansSC-Medium.ttf");
 }
+
 body {
 
     padding: 0px;
@@ -14,8 +15,8 @@ body {
     background-image: url('Images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    height: 90vh;
+    width: 90vw;
     color: white;
     font-family: "TitleFont";
 }
@@ -43,7 +44,7 @@ body {
     justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 30px;
-
+    margin-left: 150px;
 }
 
 .head-img {
@@ -56,6 +57,19 @@ body {
     margin-right: 150px;
     width: 210px;
 }
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .buttons {
     font-weight: lighter;
@@ -72,10 +86,9 @@ body {
     margin-bottom: 20px;
 }
 
-footer {
-    text-align: center;
-    color: white;
-    font-size: 1.5rem;
+#start-button{
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .controllers {
@@ -88,7 +101,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 .btn-primary {
@@ -104,6 +117,8 @@ footer {
 
 .modal-title{
     margin-left: 180px;
+    color: black;
+    text-align: center;
 }
 .clover {
     width: 40px;
@@ -111,11 +126,6 @@ footer {
 
 .acorn {
     width: 40px;
-}
-
-.modal-title {
-    color: black;
-    text-align: center;
 }
 
 .btn-secondary {
@@ -129,41 +139,34 @@ footer {
     width: 450px;
 }
 
-
 .modal-footer {
     display: flex;
     justify-content: center
 }
+
 .controlles-img{
     margin-left: 30px;
-}
-.contenedor {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 200px;
 }
 
-.encabezado {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+footer {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
 }
+
 
 .name {
     color: white;
     margin-top: 20px;
-    margin-right: 40px;
     text-decoration: none;
+    margin-left: 100px;
 }
 .name:hover {
     color: black;
 }
 
-#start-button{
-    padding-right: 20px;
-    padding-left: 20px;
-}
+
 .query-img {
     display: none;
 }
