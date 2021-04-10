@@ -3,6 +3,10 @@ html{
     overflow: hidden;
 }
 
+@font-face {
+    font-family:"TitleFont";
+    src: url("./Fonts/AlegreyaSansSC-Medium.ttf");
+}
 body {
 
     padding: 0px;
@@ -13,7 +17,7 @@ body {
     height: 100vh;
     width: 100vw;
     color: white;
-    font-family: "AlegreyaSansSC-Black";
+    font-family: "TitleFont";
 }
 
 .canvas {
@@ -96,8 +100,8 @@ footer {
 .modal-body {
     text-align: center;
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 .modal-title{
     margin-left: 180px;
 }
