@@ -40,4 +40,4 @@ You can put the sound on and off as you please 🔇
 
 ---
 
-Programmed with 💪  by [🙋🏻‍♀️](https://github.com/srtamaciel)   *Ironhacker*   ✨ Enjoy it! ✨
+Programmed with 💪  by [🙋🏻‍♀️](https://github.com/srtamaciel/lab-ironbeers.git)   *Ironhacker*   ✨ Enjoy it! ✨
