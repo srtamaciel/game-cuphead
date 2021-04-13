@@ -36,8 +36,8 @@ You can put the sound on and off as you please 🔇
 
 ## Author 🙋🏻‍♀
 
-👩🏻‍💻  [Raquel Rodriguez](https://github.com/srtamaciel) 
+👩🏻‍💻  [Raquel Rodriguez](https://www.linkedin.com/in/raquel-rodr%C3%ADguez-d%C3%ADaz-880151a7/) 
 
 ---
 
-Programmed with 💪  by [🙋🏻‍♀️](https://github.com/srtamaciel/lab-ironbeers.git)   *Ironhacker*   ✨ Enjoy it! ✨
+Programmed with 💪  by [🙋🏻‍♀️](https://www.linkedin.com/in/raquel-rodr%C3%ADguez-d%C3%ADaz-880151a7/)   *Ironhacker*   ✨ Enjoy it! ✨
