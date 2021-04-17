@@ -58,7 +58,7 @@ window.onload = () => {
 
     const images = {}
     images.flower = new Image()
-    images.flower.src = '/Images/flower-01.png'
+    images.flower.src = '/Images/sprite-flower.png'
 
     const flowerWidth = 709.9
     const flowerHeigth = 877
@@ -95,9 +95,9 @@ window.onload = () => {
             this.w = 60
             this.h = 80
             this.img = new Image()
-            this.img.src = '/Images/cuphead.png'
+            this.img.src = '/Images/player.png'
             this.imgL = new Image()
-            this.imgL.src = '/Images/cuphead left.png'
+            this.imgL.src = '/Images/player-left.png'
             this.dy = 0
             this.jumpForce = 12
             this.grounded = false
@@ -174,7 +174,7 @@ window.onload = () => {
             this.x = 500
             this.y = Math.floor(Math.random() * ((390 - this.width) - 60)) + 60
             this.img = new Image()
-            this.img.src = '/Images/Acorn_01.png'
+            this.img.src = '/Images/acorn.png'
         }
 
         draw() {
@@ -241,7 +241,7 @@ window.onload = () => {
 
     const gameOverImg = () => {
         let looser = new Image()
-        looser.src = './Images/Game-over-new-img.png'
+        looser.src = './Images/game-over.png'
 
         looser.onload = () => {
             ctx.drawImage(looser, 0, 0, canvas.width, canvas.height)
@@ -263,7 +263,7 @@ window.onload = () => {
     // Winner
     const winnerImg = () => {
         let winner = new Image()
-        winner.src = './Images/winner-01.jpg'
+        winner.src = './Images/winner.jpg'
         winner.onload = () => {
             ctx.drawImage(winner, 0, 0, canvas.width, canvas.height)
         }
