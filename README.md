@@ -39,8 +39,5 @@ You can put the sound on and off as you please 🔇
 👩🏻‍💻  [Raquel Rodriguez](https://www.linkedin.com/in/raquel-rodr%C3%ADguez-d%C3%ADaz-880151a7/) 
 
 ---
-
-<<<<<<< HEAD
 Programmed with 💪  by [🙋🏻‍♀️] *Ironhacker*   ✨ Enjoy it! ✨
-=======
 
