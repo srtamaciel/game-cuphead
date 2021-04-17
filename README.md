@@ -40,4 +40,7 @@ You can put the sound on and off as you please 🔇
 
 ---
 
+<<<<<<< HEAD
 Programmed with 💪  by [🙋🏻‍♀️] *Ironhacker*   ✨ Enjoy it! ✨
+=======
+
